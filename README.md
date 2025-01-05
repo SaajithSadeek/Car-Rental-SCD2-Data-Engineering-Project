@@ -33,3 +33,17 @@ This project demonstrates a car rental data pipeline that ingests and processes 
   - Perform the SCD2 merge on the customer_dim table in Snowflake.
   - Trigger PySpark jobs on GCP Dataproc cluster to process the data and load it into Snowflake.
 
+## Data Pipeline Flow
+
+**1. Extract:** Raw car rental and customer data is stored daily in Google Cloud Storage.
+**2. Transform:**
+- Data is loaded into Snowflake dimensions and fact tables.
+- The customer_dim table uses SCD2 logic to ensure historical changes to customer information are captured.
+- Data transformations are performed using **PySpark** to clean and structure the data for analytics.
+**3. Load:** Transformed data is loaded back into Snowflake’s fact tables (rentals_fact).
+
+## Usage
+
+**1. Running the DAG:** Once everything is set up, you can manually trigger or schedule the DAG in Airflow to run automatically at specific intervals.
+**2. Monitoring:** Monitor the status of the pipeline from the **Airflow UI** to check for any failures or bottlenecks.
+**3.Querying Data:** After running the pipeline, the processed data will be available in **Snowflake** for further analysis.
