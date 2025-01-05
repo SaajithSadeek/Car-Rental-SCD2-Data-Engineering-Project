@@ -47,5 +47,8 @@ This project demonstrates a car rental data pipeline that ingests and processes 
 ## Usage
 
 **1. Running the DAG:** Once everything is set up, you can manually trigger or schedule the DAG in Airflow to run automatically at specific intervals.
+
 **2. Monitoring:** Monitor the status of the pipeline from the **Airflow UI** to check for any failures or bottlenecks.
+
 **3.Querying Data:** After running the pipeline, the processed data will be available in **Snowflake** for further analysis.
+
