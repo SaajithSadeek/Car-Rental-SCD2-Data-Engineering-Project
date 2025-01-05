@@ -14,6 +14,10 @@ This project demonstrates a car rental data pipeline that ingests and processes 
 ## Project Components
 
 **1. Snowflake Static Tables:**
-- <u>location_dim<u>: Stores the static data related to car rental locations.
-- <u>date_dim<u>: Contains dates and time-related dimensions.
-- <u>car_dim<u>: Stores static information about cars (e.g., make, model, year).
+- ==location_dim==: Stores the static data related to car rental locations.
+- date_dim: Contains dates and time-related dimensions.
+- car_dim: Stores static information about cars (e.g., make, model, year).
+
+**2. Snowflake Dynamic Tables:**
+- customer_dim: A Slowly Changing Dimension (SCD2) table that tracks customer information over time. SCD2 logic ensures that changes to customer records (e.g., address changes) are captured and historical data is preserved.
+- rentals_fact: A fact table storing car rental transactions, linking to customer_dim, car_dim, and location_dim.
