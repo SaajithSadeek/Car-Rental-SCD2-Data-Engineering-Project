@@ -8,5 +8,5 @@ This project demonstrates a car rental data pipeline that ingests and processes 
 - **Python:** The primary programming language for data transformations and orchestrating workflows.
 - **PySpark:** For big data processing and transformations.
 - **GCP Dataproc:** Managed Apache Spark and Hadoop for running PySpark jobs at scale.
-- **Airflow:** To schedule and manage workflows (DAGs).
+- **GCP Composer(Airflow):** To schedule and manage workflows (DAGs).
 - **Snowflake:** Cloud data warehouse for storing and managing data.
