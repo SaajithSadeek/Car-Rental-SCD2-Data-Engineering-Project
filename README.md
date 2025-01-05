@@ -1,1 +1,1 @@
-# Car-Rental-SCD2-Data-Engineering-Project
+# Car Rental Data Batch Ingestion with SCD2 Merge in Snowflake
