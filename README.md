@@ -36,10 +36,12 @@ This project demonstrates a car rental data pipeline that ingests and processes 
 ## Data Pipeline Flow
 
 **1. Extract:** Raw car rental and customer data is stored daily in Google Cloud Storage.
+
 **2. Transform:**
 - Data is loaded into Snowflake dimensions and fact tables.
 - The customer_dim table uses SCD2 logic to ensure historical changes to customer information are captured.
 - Data transformations are performed using **PySpark** to clean and structure the data for analytics.
+
 **3. Load:** Transformed data is loaded back into Snowflake’s fact tables (rentals_fact).
 
 ## Usage
