@@ -23,7 +23,13 @@ This project demonstrates a car rental data pipeline that ingests and processes 
 - rentals_fact: A fact table storing car rental transactions, linking to customer_dim, car_dim, and location_dim.
 
 **3. PySpark Data Processing:**
+- PySpark code is used to read the static dimensions (location_dim, date_dim, car_dim) and the fact table (rentals_fact) from Snowflake.
+- Data is transformed and processed to ensure consistency and accuracy.
+- The transformed data is then appended back into the rentals_fact table in Snowflake.
+
+**4. Airflow DAG:**
 - Airflow DAGs are used to automate the entire pipeline:
   - Read daily car rental and customer data from Google Cloud Storage buckets.
   - Perform the SCD2 merge on the customer_dim table in Snowflake.
   - Trigger PySpark jobs on GCP Dataproc cluster to process the data and load it into Snowflake.
+
