@@ -14,10 +14,16 @@ This project demonstrates a car rental data pipeline that ingests and processes 
 ## Project Components
 
 **1. Snowflake Static Tables:**
-- ==location_dim==: Stores the static data related to car rental locations.
+- location_dim: Stores the static data related to car rental locations.
 - date_dim: Contains dates and time-related dimensions.
 - car_dim: Stores static information about cars (e.g., make, model, year).
 
 **2. Snowflake Dynamic Tables:**
 - customer_dim: A Slowly Changing Dimension (SCD2) table that tracks customer information over time. SCD2 logic ensures that changes to customer records (e.g., address changes) are captured and historical data is preserved.
 - rentals_fact: A fact table storing car rental transactions, linking to customer_dim, car_dim, and location_dim.
+
+**3. PySpark Data Processing:**
+- Airflow DAGs are used to automate the entire pipeline:
+  - Read daily car rental and customer data from Google Cloud Storage buckets.
+  - Perform the SCD2 merge on the customer_dim table in Snowflake.
+  - Trigger PySpark jobs on GCP Dataproc cluster to process the data and load it into Snowflake.
