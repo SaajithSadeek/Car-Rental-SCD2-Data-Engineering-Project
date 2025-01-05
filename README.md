@@ -10,3 +10,10 @@ This project demonstrates a car rental data pipeline that ingests and processes 
 - **GCP Dataproc:** Managed Apache Spark and Hadoop for running PySpark jobs at scale.
 - **GCP Composer(Airflow):** To schedule and manage workflows (DAGs).
 - **Snowflake:** Cloud data warehouse for storing and managing data.
+
+## Project Components
+
+**1. Snowflake Static Tables:**
+- <ins>location_dim<ins>: Stores the static data related to car rental locations.
+- <ins>date_dim<ins>: Contains dates and time-related dimensions.
+- <ins>car_dim<ins>: Stores static information about cars (e.g., make, model, year).
