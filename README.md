@@ -14,6 +14,6 @@ This project demonstrates a car rental data pipeline that ingests and processes 
 ## Project Components
 
 **1. Snowflake Static Tables:**
-- <ins>location_dim<ins>: Stores the static data related to car rental locations.
-- <ins>date_dim<ins>: Contains dates and time-related dimensions.
-- <ins>car_dim<ins>: Stores static information about cars (e.g., make, model, year).
+- <u>location_dim<u>: Stores the static data related to car rental locations.
+- <u>date_dim<u>: Contains dates and time-related dimensions.
+- <u>car_dim<u>: Stores static information about cars (e.g., make, model, year).
